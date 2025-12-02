@@ -9,6 +9,11 @@ class Court:
         self.w = self.image.w
         self.h = self.image.h
 
+    def to_screen(self, cx, cy):
+        sx = cx - self.window_left
+        sy = cy - self.window_bottom
+        return sx, sy
+
 
     def update(self):
         self.window_left = clamp(0, int(common.boy.x) - self.cw // 2, self.w - self.cw - 1)
